@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "24e00a66-1d91-4fd4-b56d-513886b885f4",
+		"name": "API-GESTION-2020527",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38160952"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Adolfo Perez\",\r\n    \"username\": \"dPerez\",\r\n    \"email\": \"dAdolfo@gmail.com\",\r\n    \"password\": \"dBerci4n!\",\r\n    \"phone\": \"48752015\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dbercian@gmail.com\",\r\n    \"password\": \"dBerci4n!\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Agregar curso",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Literatura I\",\r\n    \"description\": \"Curso de literatura para Cuarto Perito\",\r\n    \"email\": \"gbercian@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/courses/addcourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"courses",
+								"addcourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar cursos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/courses/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Curso",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/courses/searchCourse/67a816885842a2c637e0dda0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"courses",
+								"searchCourse",
+								"67a816885842a2c637e0dda0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar curso",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Literatura para principiantes\",\r\n    \"description\": \"Curso de literatura para Tercero Básico\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/courses/updateCourse/67a817a45842a2c637e0dda3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"courses",
+								"updateCourse",
+								"67a817a45842a2c637e0dda3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar curso",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/courses/deleteCourse/67a816885842a2c637e0dda0/67a80f86b486a0845e873cfc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"courses",
+								"deleteCourse",
+								"67a816885842a2c637e0dda0",
+								"67a80f86b486a0845e873cfc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Students",
+			"item": [
+				{
+					"name": "Asignar Curso",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"studentId\": \"67a906c702240f10ec36cb4b\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/students/addCourse/67a816885842a2c637e0dda0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"students",
+								"addCourse",
+								"67a816885842a2c637e0dda0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Estudiante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/students/courses/67a906c702240f10ec36cb4b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"students",
+								"courses",
+								"67a906c702240f10ec36cb4b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar curso",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/students/courses/67a6c6cc3109db798f72b2d4/67a816885842a2c637e0dda0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"students",
+								"courses",
+								"67a6c6cc3109db798f72b2d4",
+								"67a816885842a2c637e0dda0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar estudiante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Adolfo Bercian\",\r\n    \"username\": \"dbercian7\",\r\n    \"phone\": \"30422028\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/students/editStudent/67a6c6cc3109db798f72b2d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"students",
+								"editStudent",
+								"67a6c6cc3109db798f72b2d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Estudiante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/students/deleteStudent/67a906c702240f10ec36cb4b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"students",
+								"deleteStudent",
+								"67a906c702240f10ec36cb4b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Teachers",
+			"item": [
+				{
+					"name": "Listar Cursos de profesores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/gestionSystem/v1/teachers/67a80f86b486a0845e873cfc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"gestionSystem",
+								"v1",
+								"teachers",
+								"67a80f86b486a0845e873cfc"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -4,7 +4,6 @@ import express from "express"
 import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
-
 import { dbConnection } from "./mongo.js"
 import authRoutes from "../src/auth/auth.routes.js"
 import courseRoutes from "../src/courses/courses.routes.js"
@@ -18,6 +17,7 @@ const middlewares = (app) => {
     app.use(morgan("dev"))
 }
 
+// Configuración de rutas
 const routes = (app) =>{
     app.use("/gestionSystem/v1/auth", authRoutes)
     app.use("/gestionSystem/v1/courses", courseRoutes)
@@ -25,6 +25,7 @@ const routes = (app) =>{
     app.use("/gestionSystem/v1/teachers", teacherRoutes)
 }
 
+// Conexión a la base de datos
 const conectarDB = async () =>{
     try{
         await dbConnection()
