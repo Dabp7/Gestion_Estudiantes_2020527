@@ -6,7 +6,7 @@ import { handleErrors } from "./handle-errors.js";
 export const createCoursesValidator = [
     body("name").notEmpty().withMessage("El nombre es requerido"),
     body("description").notEmpty().withMessage("La descripción es requerida"),
-    body("email").isEmail().withMessage("El correo del profesor es requerido y debe ser válido"),
+    body("email").optional().isEmail().withMessage("El correo debe ser válido"),
     validarCampos,
     handleErrors
 ]

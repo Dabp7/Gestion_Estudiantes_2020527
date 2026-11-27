@@ -18,7 +18,8 @@ const userSchema = Schema({
     },
     password:{
         type: String,
-        required: [true, "Password is required"]
+        required: [true, "Password is required"],
+        select: false
     },
     phone:{
         type: String,
@@ -35,11 +36,15 @@ const userSchema = Schema({
     status:{
         type: Boolean,
         default: true
+    },
+    enrollmentVersion:{
+        type: Number,
+        default: 0
     }
 },
 {
     versionKey: false,
-    timeStamps: true
+    timestamps: true
 })
 
 
