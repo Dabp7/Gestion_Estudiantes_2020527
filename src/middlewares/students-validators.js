@@ -21,6 +21,10 @@ export const deleteStudentValidator = [
 export const updateStudentValidator = [
     param("uid", "No es un ID válido").isMongoId(),
     param("uid").custom(userExists),
+    body('name').optional().isString().trim().isLength({min:1,max:25}),
+    body('username').optional().isString().trim().isLength({min:3,max:40}),
+    body('email').optional().isEmail().normalizeEmail(),
+    body('phone').optional().matches(/^\d{8}$/),
     validarCampos,
     handleErrors
 ]

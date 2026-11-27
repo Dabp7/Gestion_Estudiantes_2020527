@@ -5,7 +5,7 @@ import { handleErrors } from "./handle-errors.js";
 
 export const registerValidator = [
     // Verifica que el campo "name" no esté vacío
-    body("name").notEmpty().withMessage("El nombre es requerido"),
+    body("name").isString().trim().isLength({min:1,max:25}).withMessage("El nombre es requerido (máximo 25 caracteres)"),
     
     // Verifica que el campo "username" no esté vacío
     body("username").notEmpty().withMessage("El username es requerido"),
@@ -14,7 +14,7 @@ export const registerValidator = [
     body("email").notEmpty().withMessage("El email es requerido"),
     
     // Valida que el email tenga un formato correcto
-    body("email").isEmail().withMessage("No es un email válido"),
+    body("email").isEmail().normalizeEmail().withMessage("No es un email válido"),
     
     // Usa una función personalizada para verificar si el email ya existe
     body("email").custom(emailExists),
@@ -23,7 +23,8 @@ export const registerValidator = [
     body("username").custom(usernameExists),
     
     // Valida que la contraseña cumpla con ciertos requisitos de seguridad
-    body("password").isStrongPassword({
+    body("phone").matches(/^\d{8}$/).withMessage('El teléfono debe tener 8 dígitos'),
+    body("password").isString().isLength({max:128}).isStrongPassword({
         minLength: 8, // Longitud mínima de 8 caracteres
         minLowercase: 1, // Mínimo una letra minúscula
         minUppercase: 1, // Mínimo una letra mayúscula
@@ -44,7 +45,7 @@ export const loginValidator = [
     body("username").optional().isString().withMessage("Username es en formato erróneo"),
     
     // Valida que la contraseña tenga al menos 4 caracteres
-    body("password").isLength({min: 4}).withMessage("El password debe contener al menos 8 caracteres"),
+    body("password").isString().isLength({min: 8,max:128}).withMessage("El password debe contener entre 8 y 128 caracteres"),
     
     // Middleware para validar los campos y manejar errores
     validarCampos,

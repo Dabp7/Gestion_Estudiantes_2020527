@@ -12,13 +12,13 @@ const coursesSchema = new Schema({
     // Definir el atributo teacher como una referencia a usuario
     teacher: {
         type: Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'User',
         required: true
     },
     // Definir el atributo students como un array que hace referencia al rol de estudiante
     students: [{
         type: Schema.Types.ObjectId,
-        ref: 'user',
+        ref: 'User',
         required: true
     }],
     status:{
