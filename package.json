@@ -28,5 +28,6 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {"mongodb-memory-server":"11.4.0","supertest":"7.2.2"},
-  "engines": {"node": ">=22.15.0"}
+  "engines": {"node": ">=22.15.0"},
+  "config": {"mongodbMemoryServer":{"disablePostinstall":true}}
 }
